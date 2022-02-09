@@ -21,6 +21,7 @@ def close_db(exception: Exception = None) -> None:
     db = g.pop("db", None)
 
     if db is not None:
+        db.commit()
         db.close()
 
 
