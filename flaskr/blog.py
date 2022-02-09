@@ -73,7 +73,7 @@ def post_update(post_id: int) -> Union[str, Response]:
     body = request.form["body"]
     error = None
 
-    if title is None:
+    if not title:
         error = "Title is required."
 
     if error is not None:
